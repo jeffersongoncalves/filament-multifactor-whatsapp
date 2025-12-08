@@ -25,6 +25,7 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
     protected int $codeExpiryMinutes = 4;
 
     protected string $codeNotification = VerifyWhatsappAuthentication::class;
+
     protected ?Closure $generateCodesUsing = null;
 
     public function getId(): string
@@ -41,8 +42,8 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
 
     public function beforeChallenge(Authenticatable $user): void
     {
-        if (!($user instanceof HasWhatsappAuthentication)) {
-            throw new LogicException('The user model must implement the [' . HasWhatsappAuthentication::class . '] interface to use whatsapp authentication.');
+        if (! ($user instanceof HasWhatsappAuthentication)) {
+            throw new LogicException('The user model must implement the ['.HasWhatsappAuthentication::class.'] interface to use whatsapp authentication.');
         }
 
         $this->sendCode($user);
@@ -50,11 +51,11 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
 
     public function sendCode(HasWhatsappAuthentication $user): bool
     {
-        if (!($user instanceof Model)) {
-            throw new LogicException('The [' . $user::class . '] class must be an instance of [' . Model::class . '] to use whatsapp authentication.');
+        if (! ($user instanceof Model)) {
+            throw new LogicException('The ['.$user::class.'] class must be an instance of ['.Model::class.'] to use whatsapp authentication.');
         }
 
-        if (!method_exists($user, 'notify')) {
+        if (! method_exists($user, 'notify')) {
             $userClass = $user::class;
 
             throw new LogicException("Model [{$userClass}] does not have a [notify()] method.");
@@ -88,7 +89,7 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
             return ($this->generateCodesUsing)();
         }
 
-        return str_pad((string)random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+        return str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);
     }
 
     public function getCodeExpiryMinutes(): int
@@ -131,7 +132,7 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
             Actions::make($this->getActions())
                 ->label(__('filament-multifactor-whatsapp::provider.management_schema.actions.label'))
                 ->belowContent(__('filament-multifactor-whatsapp::provider.management_schema.actions.below_content'))
-                ->afterLabel(fn(): Text => $this->isEnabled($user)
+                ->afterLabel(fn (): Text => $this->isEnabled($user)
                     ? Text::make(__('filament-multifactor-whatsapp::provider.management_schema.actions.messages.enabled'))
                         ->badge()
                         ->color('success')
@@ -146,16 +147,16 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
 
         return [
             SetUpWhatsappAuthenticationAction::make($this)
-                ->hidden(fn(): bool => $this->isEnabled($user)),
+                ->hidden(fn (): bool => $this->isEnabled($user)),
             DisableWhatsappAuthenticationAction::make($this)
-                ->visible(fn(): bool => $this->isEnabled($user)),
+                ->visible(fn (): bool => $this->isEnabled($user)),
         ];
     }
 
     public function isEnabled(Authenticatable $user): bool
     {
-        if (!($user instanceof HasWhatsappAuthentication)) {
-            throw new LogicException('The user model must implement the [' . HasWhatsappAuthentication::class . '] interface to use whatsapp authentication.');
+        if (! ($user instanceof HasWhatsappAuthentication)) {
+            throw new LogicException('The user model must implement the ['.HasWhatsappAuthentication::class.'] interface to use whatsapp authentication.');
         }
 
         return $user->hasWhatsappAuthentication();
@@ -171,7 +172,7 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
                     ->label(__('filament-multifactor-whatsapp::provider.login_form.code.actions.resend.label'))
                     ->link()
                     ->action(function () use ($user): void {
-                        if (!$this->sendCode($user)) {
+                        if (! $this->sendCode($user)) {
                             Notification::make()
                                 ->title(__('filament-multifactor-whatsapp::provider.login_form.code.actions.resend.notifications.throttled.title'))
                                 ->danger()
@@ -206,7 +207,7 @@ class WhatsappAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
         if (
             blank($codeHash)
             || blank($codeExpiresAt)
-            || (!Hash::check($code, $codeHash))
+            || (! Hash::check($code, $codeHash))
             || now()->greaterThan($codeExpiresAt)
         ) {
             return false;

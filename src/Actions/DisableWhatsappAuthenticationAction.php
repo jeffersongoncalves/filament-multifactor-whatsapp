@@ -43,7 +43,7 @@ class DisableWhatsappAuthenticationAction
                             /** @var HasWhatsappAuthentication $user */
                             $user = Filament::auth()->user();
 
-                            if (!$whatsappAuthentication->sendCode($user)) {
+                            if (! $whatsappAuthentication->sendCode($user)) {
                                 Notification::make()
                                     ->title(__('filament-multifactor-whatsapp::actions/disable.modal.form.code.actions.resend.notifications.throttled.title'))
                                     ->danger()
@@ -68,7 +68,7 @@ class DisableWhatsappAuthenticationAction
                         };
                     }),
             ])
-            ->modalSubmitAction(fn(Action $action) => $action
+            ->modalSubmitAction(fn (Action $action) => $action
                 ->label(__('filament-multifactor-whatsapp::actions/disable.modal.actions.submit.label')))
             ->action(function (): void {
                 /** @var HasWhatsappAuthentication $user */
