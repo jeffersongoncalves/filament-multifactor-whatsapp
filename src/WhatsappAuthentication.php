@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Actions\DisableWhatsappAuthenticationAction;
+use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Actions\SetUpWhatsappAuthenticationAction;
 use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Contracts\HasWhatsappAuthentication;
 use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Notifications\VerifyWhatsappAuthentication;
 use LogicException;
