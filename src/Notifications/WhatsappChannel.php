@@ -3,9 +3,6 @@
 namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Notifications;
 
 use Illuminate\Notifications\Notification;
-use WallaceMartinss\FilamentEvolution\Enums\StatusConnectionEnum;
-use WallaceMartinss\FilamentEvolution\Facades\Whatsapp;
-use WallaceMartinss\FilamentEvolution\Models\WhatsappInstance;
 
 class WhatsappChannel
 {
