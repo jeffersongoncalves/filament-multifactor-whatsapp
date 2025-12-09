@@ -1,6 +1,6 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Actions;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Actions;
 
 use Closure;
 use Filament\Actions\Action;
@@ -11,12 +11,12 @@ use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\DB;
-use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Contracts\HasWhatsappAuthentication;
-use JeffersonGoncalves\Filament\MultiFactorWhatsapp\WhatsappAuthentication;
+use JeffersonGoncalves\Filament\MultiFactorWhatsApp\Contracts\HasWhatsAppAuthentication;
+use JeffersonGoncalves\Filament\MultiFactorWhatsApp\WhatsAppAuthentication;
 
-class SetUpWhatsappAuthenticationAction
+class SetUpWhatsAppAuthenticationAction
 {
-    public static function make(WhatsappAuthentication $whatsappAuthentication): Action
+    public static function make(WhatsAppAuthentication $whatsappAuthentication): Action
     {
         return Action::make('setUpWhatsappAuthentication')
             ->label(__('filament-multifactor-whatsapp::actions/set-up.label'))
@@ -24,7 +24,7 @@ class SetUpWhatsappAuthenticationAction
             ->icon(Heroicon::LockClosed)
             ->link()
             ->mountUsing(function () use ($whatsappAuthentication): void {
-                /** @var HasWhatsappAuthentication $user */
+                /** @var HasWhatsAppAuthentication $user */
                 $user = Filament::auth()->user();
 
                 $whatsappAuthentication->sendCode($user);
@@ -41,7 +41,7 @@ class SetUpWhatsappAuthenticationAction
                         ->label(__('filament-multifactor-whatsapp::actions/set-up.modal.form.code.actions.resend.label'))
                         ->link()
                         ->action(function () use ($whatsappAuthentication): void {
-                            /** @var HasWhatsappAuthentication $user */
+                            /** @var HasWhatsAppAuthentication $user */
                             $user = Filament::auth()->user();
 
                             if (! $whatsappAuthentication->sendCode($user)) {
@@ -73,7 +73,7 @@ class SetUpWhatsappAuthenticationAction
             ->modalSubmitAction(fn (Action $action) => $action
                 ->label(__('filament-multifactor-whatsapp::actions/set-up.modal.actions.submit.label')))
             ->action(function (): void {
-                /** @var Authenticatable&HasWhatsappAuthentication $user */
+                /** @var Authenticatable&HasWhatsAppAuthentication $user */
                 $user = Filament::auth()->user();
 
                 DB::transaction(function () use ($user): void {

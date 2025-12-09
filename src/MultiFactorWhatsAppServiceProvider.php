@@ -1,11 +1,11 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MultiFactorWhatsappServiceProvider extends PackageServiceProvider
+class MultiFactorWhatsAppServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

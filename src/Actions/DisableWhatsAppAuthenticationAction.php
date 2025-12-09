@@ -1,6 +1,6 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Actions;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Actions;
 
 use Closure;
 use Filament\Actions\Action;
@@ -10,12 +10,12 @@ use Filament\Notifications\Notification;
 use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Support\Facades\DB;
-use JeffersonGoncalves\Filament\MultiFactorWhatsapp\Contracts\HasWhatsappAuthentication;
-use JeffersonGoncalves\Filament\MultiFactorWhatsapp\WhatsappAuthentication;
+use JeffersonGoncalves\Filament\MultiFactorWhatsApp\Contracts\HasWhatsAppAuthentication;
+use JeffersonGoncalves\Filament\MultiFactorWhatsApp\WhatsAppAuthentication;
 
-class DisableWhatsappAuthenticationAction
+class DisableWhatsAppAuthenticationAction
 {
-    public static function make(WhatsappAuthentication $whatsappAuthentication): Action
+    public static function make(WhatsAppAuthentication $whatsappAuthentication): Action
     {
         return Action::make('disableWhatsappAuthentication')
             ->label(__('filament-multifactor-whatsapp::actions/disable.label'))
@@ -23,7 +23,7 @@ class DisableWhatsappAuthenticationAction
             ->icon(Heroicon::LockOpen)
             ->link()
             ->mountUsing(function () use ($whatsappAuthentication): void {
-                /** @var HasWhatsappAuthentication $user */
+                /** @var HasWhatsAppAuthentication $user */
                 $user = Filament::auth()->user();
 
                 $whatsappAuthentication->sendCode($user);
@@ -40,7 +40,7 @@ class DisableWhatsappAuthenticationAction
                         ->label(__('filament-multifactor-whatsapp::actions/disable.modal.form.code.actions.resend.label'))
                         ->link()
                         ->action(function () use ($whatsappAuthentication): void {
-                            /** @var HasWhatsappAuthentication $user */
+                            /** @var HasWhatsAppAuthentication $user */
                             $user = Filament::auth()->user();
 
                             if (! $whatsappAuthentication->sendCode($user)) {
@@ -71,7 +71,7 @@ class DisableWhatsappAuthenticationAction
             ->modalSubmitAction(fn (Action $action) => $action
                 ->label(__('filament-multifactor-whatsapp::actions/disable.modal.actions.submit.label')))
             ->action(function (): void {
-                /** @var HasWhatsappAuthentication $user */
+                /** @var HasWhatsAppAuthentication $user */
                 $user = Filament::auth()->user();
 
                 DB::transaction(function () use ($user): void {

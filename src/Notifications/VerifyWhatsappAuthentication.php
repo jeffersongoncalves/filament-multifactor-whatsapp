@@ -1,6 +1,6 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Notifications;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -20,7 +20,7 @@ class VerifyWhatsappAuthentication extends Notification implements ShouldQueue
 
     public function via(object $notifiable): string
     {
-        return WhatsappChannel::class;
+        return WhatsAppChannel::class;
     }
 
     public function toWhatsapp(object $notifiable): array

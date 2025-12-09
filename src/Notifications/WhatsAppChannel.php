@@ -1,10 +1,10 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Notifications;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Notifications;
 
 use Illuminate\Notifications\Notification;
 
-class WhatsappChannel
+class WhatsAppChannel
 {
     public function send(object $notifiable, Notification $notification): void
     {

@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "JeffersonGoncalves\\Filament\\MultiFactorWhatsapp\\": "src"
+      "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\": "src"
     }
   },
   "scripts": {
@@ -47,7 +47,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "JeffersonGoncalves\\Filament\\MultiFactorWhatsapp\\MultiFactorWhatsappServiceProvider"
+        "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\MultiFactorWhatsappServiceProvider"
       ]
     }
   },

@@ -1,8 +1,8 @@
 <?php
 
-namespace JeffersonGoncalves\Filament\MultiFactorWhatsapp\Contracts;
+namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Contracts;
 
-interface HasWhatsappAuthentication
+interface HasWhatsAppAuthentication
 {
     public function hasWhatsappAuthentication(): bool;
 
