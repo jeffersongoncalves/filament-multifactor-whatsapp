@@ -3,18 +3,18 @@
 return [
     'label' => 'Turn off',
     'modal' => [
-        'heading' => 'Disable whatsapp verification codes',
-        'description' => 'Are you sure you want to stop receiving whatsapp verification codes? Disabling this will remove an extra layer of security from your account.',
+        'heading' => 'Disable WhatsApp verification codes',
+        'description' => 'Are you sure you want to stop receiving WhatsApp verification codes? Disabling this will remove an extra layer of security from your account.',
         'form' => [
             'code' => [
-                'label' => 'Enter the 6-digit code we sent you by whatsapp',
+                'label' => 'Enter the 6-digit code we sent you by WhatsApp',
                 'validation_attribute' => 'code',
                 'actions' => [
                     'resend' => [
-                        'label' => 'Send a new code by whatsapp',
+                        'label' => 'Send a new code by WhatsApp',
                         'notifications' => [
                             'resent' => [
-                                'title' => 'We\'ve sent you a new code by whatsapp',
+                                'title' => 'We\'ve sent you a new code by WhatsApp',
                             ],
                             'throttled' => [
                                 'title' => 'Too many resend attempts. Please wait before requesting another code.',
@@ -29,13 +29,13 @@ return [
         ],
         'actions' => [
             'submit' => [
-                'label' => 'Disable whatsapp verification codes',
+                'label' => 'Disable WhatsApp verification codes',
             ],
         ],
     ],
     'notifications' => [
         'disabled' => [
-            'title' => 'Whatsapp verification codes have been disabled',
+            'title' => 'WhatsApp verification codes have been disabled',
         ],
     ],
 ];
