@@ -4,7 +4,7 @@ namespace JeffersonGoncalves\Filament\MultiFactorWhatsApp\Contracts;
 
 interface HasWhatsAppAuthentication
 {
-    public function hasWhatsappAuthentication(): bool;
+    public function hasWhatsAppAuthentication(): bool;
 
-    public function toggleWhatsappAuthentication(bool $condition): void;
+    public function toggleWhatsAppAuthentication(bool $condition): void;
 }
