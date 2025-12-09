@@ -30,7 +30,7 @@ class VerifyWhatsappAuthentication extends Notification implements ShouldQueue
             return [];
         }
         $message = trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.0', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]);
-        $message .= ' ' . trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.1', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]);
+        $message .= ' '.trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.1', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]);
 
         return Whatsapp::sendText($whatsappInstance->id, $notifiable->getAttribute(config('filament-multifactor-whatsapp.phone_column_name', 'phone')), $message);
     }
