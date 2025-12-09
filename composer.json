@@ -1,11 +1,22 @@
 {
   "name": "jeffersongoncalves/filament-multifactor-whatsapp",
-  "description": "",
+  "description": "Filament 4 multi‑factor authentication via WhatsApp one‑time codes, with optional Evolution API connector integration.",
   "keywords": [
     "jeffersongoncalves",
     "laravel",
     "filament",
-    "filament-multifactor-whatsapp"
+    "filament-plugin",
+    "mfa",
+    "2fa",
+    "two-factor",
+    "multi-factor",
+    "whatsapp",
+    "otp",
+    "one-time-code",
+    "authentication",
+    "filament-multifactor-whatsapp",
+    "evolution-api",
+    "whatsapp-connector"
   ],
   "homepage": "https://github.com/jeffersongoncalves/filament-multifactor-whatsapp",
   "license": "MIT",
