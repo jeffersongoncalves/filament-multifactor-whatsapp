@@ -173,6 +173,7 @@ class WhatsAppAuthentication implements HasBeforeChallengeHook, MultiFactorAuthe
                     ->label(__('filament-multifactor-whatsapp::provider.login_form.code.actions.resend.label'))
                     ->link()
                     ->action(function () use ($user): void {
+                        // @phpstan-ignore-next-line
                         if (! $this->sendCode($user)) {
                             Notification::make()
                                 ->title(__('filament-multifactor-whatsapp::provider.login_form.code.actions.resend.notifications.throttled.title'))

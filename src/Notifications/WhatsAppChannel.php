@@ -8,6 +8,7 @@ class WhatsAppChannel
 {
     public function send(object $notifiable, Notification $notification): void
     {
+        /** @var VerifyWhatsappAuthentication $notification */
         $notification->toWhatsapp($notifiable);
     }
 }
