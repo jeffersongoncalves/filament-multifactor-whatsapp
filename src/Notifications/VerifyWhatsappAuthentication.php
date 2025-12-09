@@ -25,7 +25,7 @@ class VerifyWhatsappAuthentication extends Notification implements ShouldQueue
 
     public function toWhatsapp(object $notifiable): array
     {
-        $whatsappInstance = WhatsappInstance::query()->where('status', StatusConnectionEnum::CONNECTING->value)->first();
+        $whatsappInstance = WhatsappInstance::query()->where('status', StatusConnectionEnum::OPEN->value)->first();
         if (! $whatsappInstance) {
             return [];
         }
