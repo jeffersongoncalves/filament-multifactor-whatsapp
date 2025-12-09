@@ -15,10 +15,8 @@ class VerifyWhatsappAuthentication extends Notification implements ShouldQueue
 
     public function __construct(
         public string $code,
-        public int    $codeExpiryMinutes,
-    )
-    {
-    }
+        public int $codeExpiryMinutes,
+    ) {}
 
     public function via(object $notifiable): string
     {
@@ -28,10 +26,10 @@ class VerifyWhatsappAuthentication extends Notification implements ShouldQueue
     public function toWhatsapp(object $notifiable): array
     {
         $whatsappInstance = WhatsappInstance::query()->where('status', StatusConnectionEnum::CONNECTING->value)->first();
-        if (!$whatsappInstance) {
+        if (! $whatsappInstance) {
             return [];
         }
-        $message = trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.0', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]) . '\n';
+        $message = trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.0', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]).'\n';
         $message .= trans_choice('filament-multifactor-whatsapp::notifications/verify-whatsapp-authentication.message.1', $this->codeExpiryMinutes, ['code' => $this->code, 'minutes' => $this->codeExpiryMinutes]);
 
         return Whatsapp::sendText($whatsappInstance->id, $notifiable->getAttribute(config('filament-multifactor-whatsapp.phone_column_name', 'phone')), $message);
