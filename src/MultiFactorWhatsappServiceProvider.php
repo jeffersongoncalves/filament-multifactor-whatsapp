@@ -10,6 +10,8 @@ class MultiFactorWhatsappServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-multifactor-whatsapp');
+            ->name('filament-multifactor-whatsapp')
+            ->hasTranslations()
+            ->hasConfigFile();
     }
 }
