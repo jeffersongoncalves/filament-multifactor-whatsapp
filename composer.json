@@ -1,6 +1,6 @@
 {
   "name": "jeffersongoncalves/filament-multifactor-whatsapp",
-  "description": "Filament 4 multi‑factor authentication via WhatsApp one‑time codes, with optional Evolution API connector integration.",
+  "description": "Filament 5 multi‑factor authentication via WhatsApp one‑time codes, with optional Evolution API connector integration.",
   "keywords": [
     "jeffersongoncalves",
     "laravel",
@@ -29,24 +29,32 @@
   ],
   "require": {
     "php": "^8.3",
-    "filament/filament": "^4.0",
+    "filament/filament": "^5.0",
     "spatie/laravel-package-tools": "^1.14.0",
-    "wallacemartinss/filament-whatsapp-conector": "^1.0"
+    "wallacemartinss/filament-whatsapp-conector": "^2.0"
   },
   "require-dev": {
     "larastan/larastan": "^3.0",
     "laravel/pint": "^1.21",
-    "orchestra/testbench": "^9.0|^10.0"
+    "orchestra/testbench": "^10.0|^11.0",
+    "pestphp/pest": "^3.0",
+    "pestphp/pest-plugin-laravel": "^3.0"
   },
   "autoload": {
     "psr-4": {
       "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\Tests\\": "tests"
+    }
+  },
   "scripts": {
     "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
     "analyse": "vendor/bin/phpstan analyse",
-    "format": "vendor/bin/pint"
+    "format": "vendor/bin/pint",
+    "test": "vendor/bin/pest"
   },
   "config": {
     "sort-packages": true,
