@@ -13,7 +13,7 @@
 ## Requirements
 
 - PHP 8.3 or higher
-- Filament 4.0 or higher
+- Filament 4.0
 
 ## Installation
 
