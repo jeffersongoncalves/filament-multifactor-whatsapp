@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.1 - 2026-02-16
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/compare/2.0.0...2.0.1
+
 ## 2.0.0 - 2026-02-04
 
 ### What's Changed
