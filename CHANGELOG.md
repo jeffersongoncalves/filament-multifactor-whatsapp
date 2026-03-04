@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.2 - 2026-03-04
+
+### Breaking Changes
+
+- **Minimum Filament version bumped to `^5.3`** — required due to the new `PageConfiguration` parameter added to `Page::routes()` in [filamentphp/filament#19225](https://github.com/filamentphp/filament/pull/19225)
+
+### What's Changed
+
+- Update `composer.json` to require `filament/filament: ^5.3`
+
 ## 2.0.1 - 2026-02-16
 
 **Full Changelog**: https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/compare/2.0.0...2.0.1
