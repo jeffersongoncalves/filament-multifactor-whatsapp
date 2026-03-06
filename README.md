@@ -9,6 +9,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-multifactor-whatsapp.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-multifactor-whatsapp)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-multifactor-whatsapp/fix-php-code-style-issues.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A2.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-multifactor-whatsapp.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-multifactor-whatsapp)
+[![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-multifactor-whatsapp.svg?style=flat-square)](LICENSE.md)
 
 ## Requirements
 
