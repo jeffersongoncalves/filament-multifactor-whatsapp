@@ -11,7 +11,7 @@ description: "Multi-factor authentication via WhatsApp one-time codes, with opti
 
 # --- Images ---
 # Anexe os arquivos de imagem junto com este YAML no chat
-image: "jeffersongoncalves-filament-multifactor-whatsapp.jpg"
+image: "jeffersongoncalves-filament-multifactor-whatsapp.png"
 thumbnail: ""
 
 # --- Compatibility & Features ---
