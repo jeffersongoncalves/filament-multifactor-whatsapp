@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Filament Multifactor Whatsapp](https://raw.githubusercontent.com/jeffersongoncalves/filament-multifactor-whatsapp/2.x/art/jeffersongoncalves-filament-multifactor-whatsapp.jpg)
+![Filament Multifactor Whatsapp](https://raw.githubusercontent.com/jeffersongoncalves/filament-multifactor-whatsapp/2.x/art/jeffersongoncalves-filament-multifactor-whatsapp.png)
 
 </div>
 
