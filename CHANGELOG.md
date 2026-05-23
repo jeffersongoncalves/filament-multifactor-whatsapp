@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.4 - 2026-05-22
+
+fix: correct service provider class name casing in composer.json (PSR-4 autoload failure on case-sensitive filesystems).
+
 ## 1.0.3 - 2026-03-04
 
 ### Breaking Changes
