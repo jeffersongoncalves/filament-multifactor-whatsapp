@@ -58,7 +58,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\MultiFactorWhatsappServiceProvider"
+        "JeffersonGoncalves\\Filament\\MultiFactorWhatsApp\\MultiFactorWhatsAppServiceProvider"
       ]
     }
   },
