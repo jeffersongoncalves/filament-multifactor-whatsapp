@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 - 2026-09-23
+
+### What's new
+
+- **Translations:** 5 new locales (az, fa, hi, pt, uz). (#14)
+
+Thanks to @Elvin-Qulizade (Elvin Qulizada) for the i18n initiative behind these translations — first contributed in jeffersongoncalves/filament-scanner-guard#2 and now rolled out across the Filament plugins. He is credited as co-author.
+
+### What's Changed
+
+* ci: standardize update-changelog workflow (1.x) by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/pull/9
+* build(deps): bump the actions-deps group with 2 updates by @dependabot[bot] in https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/pull/12
+* feat(i18n): add translations (1.x) by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/pull/14
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-multifactor-whatsapp/compare/1.0.4...1.1.0
+
 ## 1.0.4 - 2026-05-22
 
 fix: correct service provider class name casing in composer.json (PSR-4 autoload failure on case-sensitive filesystems).
