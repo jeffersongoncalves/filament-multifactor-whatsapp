@@ -6,6 +6,7 @@ use Filament\FilamentServiceProvider;
 use Filament\Support\SupportServiceProvider;
 use JeffersonGoncalves\Filament\MultiFactorWhatsApp\MultiFactorWhatsAppServiceProvider;
 use JeffersonGoncalves\Filament\MultiFactorWhatsApp\Tests\Fixtures\TestPanelProvider;
+use JeffersonGoncalves\Filament\MultiFactorWhatsApp\Tests\Fixtures\User;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -38,7 +39,7 @@ abstract class TestCase extends Orchestra
 
         config()->set('app.key', 'base64:'.base64_encode(random_bytes(32)));
 
-        config()->set('auth.providers.users.model', \JeffersonGoncalves\Filament\MultiFactorWhatsApp\Tests\Fixtures\User::class);
+        config()->set('auth.providers.users.model', User::class);
     }
 
     protected function defineDatabaseMigrations(): void
